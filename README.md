@@ -1,4 +1,4 @@
-# Voter
+# Name of Startup
 ## Specification Deliverable
 ### Elevator Pitch
 
