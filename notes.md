@@ -14,5 +14,10 @@
     - forks maintain a link to the original and pulling updates is possible
     - pull requests notify the original owner about potential changes
 
+- **AWS**
+    - ssh shortcut: aws
+    - awscs260.duckdns.org
+    - this assignment taught me nothing and I am goiing to cry.
+
 ### [README Link](https://github.com/clarebwood/startup/blob/main/README.md)
 
