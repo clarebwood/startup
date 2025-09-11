@@ -18,21 +18,21 @@ A brief description of the application here. Lorem ipsum dolor sit amet, consect
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
 - [x] Description of key features
 - [x] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Here are two things I have noticed about myself: I love getting to look back at my own statistics, and I am *very* emotional. So why not combine the two? I think it be fun to create a website that allows people to track and look back on their daily emotions. This website would allow users to select what they believe to be their strongest emotion of the day once each day. They can then go back and see what their daily emotions have been as time goes on. They can also see what the weather looked like that day, because weather can play a big part in how you are feeling on any given day. In addition to this, users would be able to check out the day’s most commonly chosen emotions based on what was logged by the entire community.
 
 ### Design
 
 ![Design image](placeholder.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This is a *very* rough idea of what the website might look like. There would be a page for registering and logging in, a page for choosing the day's emotion, a page showing the day's most popular emotion, and a page showing the user's history. I would like to have a hamburger type of menu to navigate from page to page, but I'm not dead set on it. The emotions would be shown as cute little faces, or possibly just regular old emojis. History would be shown as one calendar-looking screen with the emotion picture and weather symbol shown on each day. All this is what I came up with without really understanding anything, so it is all subject to major changes.  
 
 ```mermaid
 sequenceDiagram
