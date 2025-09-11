@@ -30,7 +30,7 @@ Here are two things I have noticed about myself: I love getting to look back at 
 
 ### Design
 
-![Sketch](rough_sketch.jpg)
+![Sketch](rough_sketch.jpeg)
 
 This is a *very* rough idea of what the website might look like. There would be a page for registering and logging in, a page for choosing the day's emotion, a page showing the day's most popular emotion, and a page showing the user's history. I would like to have a hamburger type of menu to navigate from page to page, but I'm not dead set on it. The emotions would be shown as cute little faces, or possibly just regular old emojis. History would be shown as one calendar-looking screen with the emotion picture and weather symbol shown on each day. All this is what I came up with without really understanding anything, so it is all subject to major changes.  
 
