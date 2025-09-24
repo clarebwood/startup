@@ -18,21 +18,21 @@ A brief description of the application here. Lorem ipsum dolor sit amet, consect
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Here are two things I have noticed about myself: I love getting to look back at my own statistics, and I am *very* emotional. So why not combine the two? I think it be fun to create a website that allows people to track and look back on their daily emotions. This website would allow users to select what they believe to be their strongest emotion of the day once each day. They can then go back and see what their daily emotions have been as time goes on. They can also see what the weather looked like that day, because weather can play a big part in how you are feeling on any given day. In addition to this, users would be able to check out the day’s most commonly chosen emotions based on what was logged by the entire community.
 
 ### Design
 
-![Design image](placeholder.png)
+![Sketch](rough_sketch.jpeg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This is a *very* rough idea of what the website might look like. There would be a page for registering and logging in, a page for choosing the day's emotion, a page showing the day's most popular emotion, and a page showing the user's history. I would like to have a hamburger type of menu to navigate from page to page, but I'm not dead set on it. The emotions would be shown as cute little faces, or possibly just regular old emojis. History would be shown as one calendar-looking screen with the emotion picture and weather symbol shown on each day. All this is what I came up with without really understanding anything, so it is all subject to major changes.  
 
 ```mermaid
 sequenceDiagram
@@ -43,20 +43,29 @@ sequenceDiagram
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Secure login over HTTPS
+- Ability to select an emotion daily
+- Display of selected emotions for previous days as well as the weather that day
+- Display of holidays instead of weather with previous emotions if the weather idea doesn't work
+- Display of most selected emotion of all users for the current day updated in realtime
+- Notification when other users pick a daily emotion if the most common emotion idea doesn't work
+- Accounts, emotions, and weather data is stored
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Uses correct HTML structure for application. Four HTML pages. One for login, one for emotion selction, one for history, and one for the daily common emotion.
+- **CSS** - Application styling that is readable, cute, and looks good regardless of screensize.
+- **React** - Provides login, emotion selector, displaying past selections and weather, displaying daily popular emotion, and use of React for routing and components.  
+- **Service** - Backend service with endpoints for:
+  - register, login, and log out
+  - saving daily emotions and weather
+  - retrieving previous emotions and weather
+  - retrieving daily popular emotion
+  - retrieving weather data from a third party
+- **DB/Login** - Store users, emotions, and weather data in database. Register and login users. Credentials securely stored in database. Cannot log emotion unless authenticated.
+- **WebSocket** - As each user logs an emotion, the most chosen emotion for the current day is updated live and shown to all users.
 
 ## 🚀 AWS deliverable
 
