@@ -1,0 +1,17 @@
+main img {
+  width: 80%;
+}
+
+
+main .caption {
+  color: #ffafcc;
+  text-align: center;
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  color: #ffafcc;
+}
