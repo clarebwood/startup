@@ -24,6 +24,9 @@ td div {
 td img {
   max-width: 50%;
   max-height: 50%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  margin: 10;
 }
 
 
