@@ -1,0 +1,16 @@
+table button {
+  margin: 20px;
+  border: 2px solid #ffafcc;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  color: #ffafcc;
+}
