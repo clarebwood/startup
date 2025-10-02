@@ -4,21 +4,26 @@ body {
   min-width: 375px;
 }
 
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
 header {
+  background: #fde2e4;
+  text-align: center;
   flex: 0 80px;
+  padding: 1rem;
+  
 }
 
-main {
-  flex: 1 calc(100vh - 110px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+
+header h1 {
+  color: #ffafcc;
 }
 
-footer {
-  flex: 0 30px;
-}
 
 menu {
   flex: 1;
@@ -26,29 +31,73 @@ menu {
   /*  overwrite Bootstrap so the menu does not wrap */
   flex-direction: row !important;
   list-style: none;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.navbar-brand {
-  padding-left: 0.3em;
-  border-bottom: solid rgb(182, 182, 182) thin;
+
+nav menu a {
+  text-decoration: none;
+  color: #fff;
+  background: #ffafcc;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
 }
 
-menu .nav-item {
-  padding: 0 0.3em;
+
+main {
+  flex: 1 calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 }
+
+
+main h1 {
+  color: #ffafcc;
+}
+
+
+form {
+  background: #fde2e4;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+
+form input {
+  padding: 1rem;
+  border: #fff;
+  border-radius: 1rem;
+}
+
+
+form button {
+  padding: 1rem;
+  background: #ffafcc;
+  border: #fff;
+  border-radius: 1rem;
+  width: 100%;
+  color: #fff;
+}
+
+
+footer {
+  background: #fde2e4;
+  flex: 0 30px;
+  padding: 1rem;
+}
+
 
 footer a {
-  float: right;
-}
-
-@media (max-height: 600px) {
-  header {
-    display: none;
-  }
-  footer {
-    display: none;
-  }
-  main {
-    flex: 1 100vh;
-  }
+  text-decoration: none;
+  color: #fff;
+  background: #ffafcc;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
 }
