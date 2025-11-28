@@ -1,4 +1,4 @@
-table button {
+.emo-button {
   margin: 20px;
   border: 2px solid #ffafcc;
   background-color: #fff;
@@ -6,19 +6,18 @@ table button {
   aspect-ratio: 1 / 1;
 }
 
-.today-table {
-  background: #fff;
-  text-align: center;
+.emotion-list {
+  display: flex;
+  flex-direction: column;
 }
-
-
-
-
-
 
 footer {
   display: flex;
   justify-content: space-between;
   align-items: right;
   color: #ffafcc;
+}
+
+.emotion-label {
+  display: none;
 }

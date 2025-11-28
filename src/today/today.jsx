@@ -3,41 +3,32 @@ import './today.css';
 
 
 export function Today() {
-  return (
-        <main>
 
-      <table className='today-table'>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-      <tr>
-        <td><button><img src="placeholder.png"/></button></td>
-      </tr>
-    </table>
+  const emotions = [
+    "Happy",
+    "Sad",
+    "Angry",
+    "Excited",
+    "Tired",
+    "Stressed",
+    "Calm",
+    "Anxious",
+    "Content",
+    "Bored",
+  ];
+  
+  
+  return (
+      <main className="today-container">
+
+      <div className="emotion-list">
+        {emotions.map((emotion) => (
+          <button className="emo-button" key={emotion}>
+            <img src="placeholder.png"/>
+            <div className="emotion-label">{emotion}</div>
+          </button>
+  ))}
+</div>
 
     </main>
   );
