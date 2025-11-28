@@ -3,7 +3,15 @@ table button {
   border: 2px solid #ffafcc;
   background-color: #fff;
   border-radius: 1rem;
+  aspect-ratio: 1 / 1;
 }
+
+.today-table {
+  background: #fff;
+  text-align: center;
+}
+
+
 
 
 

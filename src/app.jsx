@@ -11,7 +11,7 @@ import { Today } from './today/today';
 export default function App() {
   return (
     <BrowserRouter>
-    <div>
+    <div className="body">
       <header>
 
         <h1>Startup</h1>
@@ -37,6 +37,7 @@ export default function App() {
 
       <footer>
       <NavLink to="https://github.com/clarebwood/startup.git">Clare Wood (Source)</NavLink>
+      <div class="username">Username</div>
     </footer>
     </div>
     </BrowserRouter>
