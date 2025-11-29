@@ -21,3 +21,7 @@ footer {
 .emotion-label {
   display: none;
 }
+
+.emo-button:hover {
+  border: 2px solid #fff;
+}
