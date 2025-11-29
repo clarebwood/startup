@@ -1,14 +1,12 @@
 import React from 'react';
 import './today.css';
 
-async function fetchWeather() {
-  return { forecast: "Sunny" };
-}
+
 
 
 export function Today() {
   const [selectedEmotion, setSelectedEmotion] = React.useState('');
-  const [weather, setWeather] = React.useState('');
+
 
   const emotions = [
     "Happy",
@@ -26,14 +24,11 @@ export function Today() {
     async function handleEmotionClick(emotion) {
     setSelectedEmotion(emotion);
 
-    const weatherData = await fetchWeather();
-    setWeather(weatherData);
 
     const today = new Date().toISOString().split("T")[0];
     const entry = {
       date: today,
       emotion,
-      weather: weatherData,
     };
 
     const stored = JSON.parse(localStorage.getItem("emotionLog") || "[]");
@@ -61,11 +56,9 @@ export function Today() {
         ))}
       </div>
 
-      {selectedEmotion && weather && (
+      {selectedEmotion && (
         <div>
           <h2>Emotion Selcted: {selectedEmotion}</h2>
-          <p>Weather: {weather.forecast}</p>
-          {/* weather portion will be removed when weather can be displayed in history */}
         </div>
       )}
     </main>
