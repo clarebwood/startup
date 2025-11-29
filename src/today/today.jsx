@@ -1,8 +1,14 @@
 import React from 'react';
 import './today.css';
 
+async function fetchWeather() {
+  return { forecast: "Sunny" };
+}
+
 
 export function Today() {
+  const [selectedEmotion, setSelectedEmotion] = React.useState('');
+  const [weather, setWeather] = React.useState('');
 
   const emotions = [
     "Happy",
@@ -16,20 +22,52 @@ export function Today() {
     "Content",
     "Bored",
   ];
+
+    async function handleEmotionClick(emotion) {
+    setSelectedEmotion(emotion);
+
+    const weatherData = await fetchWeather();
+    setWeather(weatherData);
+
+    const today = new Date().toISOString().split("T")[0];
+    const entry = {
+      date: today,
+      emotion,
+      weather: weatherData,
+    };
+
+    const stored = JSON.parse(localStorage.getItem("emotionLog") || "[]");
+    stored.push(entry);
+    localStorage.setItem("emotionLog", JSON.stringify(stored));
+
+
+
+    }
   
   
   return (
-      <main className="today-container">
+    <main className="today-container">
 
       <div className="emotion-list">
         {emotions.map((emotion) => (
-          <button className="emo-button" key={emotion}>
+          <button
+            className="emo-button"
+            key={emotion}
+            onClick={() => handleEmotionClick(emotion)}
+          >
             <img src="placeholder.png"/>
             <div className="emotion-label">{emotion}</div>
           </button>
-  ))}
-</div>
+        ))}
+      </div>
 
+      {selectedEmotion && weather && (
+        <div>
+          <h2>Emotion Selcted: {selectedEmotion}</h2>
+          <p>Weather: {weather.forecast}</p>
+          {/* weather portion will be removed when weather can be displayed in history */}
+        </div>
+      )}
     </main>
   );
 }
