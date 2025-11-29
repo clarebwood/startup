@@ -4,6 +4,26 @@ import "./history.css";
 export function History() {
   const year = new Date().getFullYear();
 
+  const entries = JSON.parse(localStorage.getItem("emotionLog") || "[]");
+
+  const entryMap = {};
+  for (const e of entries) {
+    entryMap[e.date] = e.emotion;
+  }
+
+  const emotionIcons = {
+    Happy: "placeholder.png",
+    Sad: "placeholder.png",
+    Angry: "placeholder.png",
+    Excited: "placeholder.png",
+    Tired: "placeholder.png",
+    Stressed: "placeholder.png",
+    Calm: "placeholder.png",
+    Anxious: "placeholder.png",
+    Content: "placeholder.png",
+    Bored: "placeholder.png",
+  };
+
   function buildMonth(monthIndex) {
     const firstDay = new Date(year, monthIndex, 1);
     const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
@@ -37,8 +57,14 @@ export function History() {
                 {week.map((day, di) => (
                   <td key={di}>
                     <div>
-                      {day !== null && <span>{day}</span>}
-                    </div>
+                        {day !== null && (() => {
+                            const isoDate = `${year}-${String(monthIndex + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+                            const emotion = entryMap[isoDate];
+                            const icon = emotion ? emotionIcons[emotion] : "history_pink.png";
+
+                            return <img src={icon} />;
+                        })()}
+                        </div>
                   </td>
                 ))}
               </tr>

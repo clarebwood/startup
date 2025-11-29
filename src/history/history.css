@@ -6,7 +6,7 @@ main h2 {
 
 table {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 3/2;
   table-layout: fixed;
   background: #fde2e4;
   border-radius: 1rem;
@@ -35,8 +35,4 @@ footer {
   justify-content: space-between;
   align-items: right;
   color: #ffafcc;
-}
-
-table span {
- color: #ffafcc;
 }
