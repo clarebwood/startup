@@ -73,7 +73,7 @@ export default function App() {
 
       <footer>
       <NavLink to="https://github.com/clarebwood/startup.git">Clare Wood (Source)</NavLink>
-      <div className="username">{userName}</div>
+      {authState === AuthState.Authenticated && <div className="username">{userName}</div>}
       {authState === AuthState.Unauthenticated && <div className="username"></div>}
     </footer>
     </div>
