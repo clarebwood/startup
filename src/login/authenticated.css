@@ -1,0 +1,13 @@
+.quote-box {
+  background-color: #fde2e4;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  color: #fff;
+  font-style: italic;
+}
+
+.author {
+  font-weight: bold;
+}

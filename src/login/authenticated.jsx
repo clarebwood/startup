@@ -1,11 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './authenticated.css';
 
 import Button from 'react-bootstrap/Button';
 
 
 export function Authenticated(props) {
   const navigate = useNavigate();
+
+  const [quote, setQuote] = React.useState('Loading...');
+  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
+
+  React.useEffect(() => {
+    setQuote('Whoever is happy will make others happy too.');
+    setQuoteAuthor('Anne Frank');
+  }, []);
 
   function logout() {
     localStorage.removeItem('userName');
@@ -14,10 +23,12 @@ export function Authenticated(props) {
 
   return (
     <div>
-        <div>
-          
-        </div>
         <button onClick={() => logout()}>Log Out</button>
+
+        <div className="quote-box" >
+        <p className="quote" >"{quote}"</p>
+        <p className="author" >— {quoteAuthor}</p>
+      </div>
     </div>
   );
 }
