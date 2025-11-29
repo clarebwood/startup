@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 
-import './authenticated.css';
 
 export function Authenticated(props) {
   const navigate = useNavigate();
@@ -15,16 +14,10 @@ export function Authenticated(props) {
 
   return (
     <div>
-      <form>
         <div>
-          <input type="text" placeholder="username" />
+          
         </div>
-        <div>
-          <input type="password" placeholder="password" />
-        </div>
-        <button type="submit">Login</button>
-        <button type="submit">Create</button>
-      </form>
+        <button onClick={() => logout()}>Log Out</button>
     </div>
   );
 }

@@ -118,3 +118,17 @@ footer a:hover {
   background: #fff;
   color: #ffafcc;
 }
+
+button {
+  padding: 1rem;
+  background: #ffafcc;
+  border: #fff;
+  border-radius: 1rem;
+  width: 100%;
+  color: #fff;
+}
+
+button:hover {
+  background: #fff;
+  color: #ffafcc;
+}

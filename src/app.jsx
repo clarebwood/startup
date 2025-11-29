@@ -1,14 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
-
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
 import { History } from './history/history';
 import { Popular } from './popular/popular';
 import { Today } from './today/today';
+import { AuthState } from './login/authState';
 
 export default function App() {
+
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+  const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+  const [authState, setAuthState] = React.useState(currentAuthState);
+
   return (
     <BrowserRouter>
     <div className="body">
@@ -17,18 +22,49 @@ export default function App() {
         <h1>Startup</h1>
 
       <nav>
-  <menu>
-    <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/today">Today</NavLink></li>
-    <li><NavLink to="/history">History</NavLink></li>
-    <li><NavLink to="/popular">Popular</NavLink></li>
-  </menu>
+             <menu>
+              {authState === AuthState.Authenticated && (
+              <li>
+                <NavLink  to=''>
+                  Home
+                </NavLink>
+              </li>
+              )}
+              {authState === AuthState.Authenticated && (
+                <li>
+                  <NavLink to='today'>
+                    Today
+                  </NavLink>
+                </li>
+              )}
+              {authState === AuthState.Authenticated && (
+                <li>
+                  <NavLink to='history'>
+                    History
+                  </NavLink>
+                </li>
+              )}
+              {authState === AuthState.Authenticated && (
+                <li >
+                  <NavLink to='popular'>
+                    Popular
+                  </NavLink>
+                </li>
+              )}
+            </menu>
 </nav>
 
     </header>
 
       <Routes>
-  <Route path='/' element={<Login />} exact />
+  <Route path='/' element={<Login
+                userName={userName}
+                authState={authState}
+                onAuthChange={(userName, authState) => {
+                  setAuthState(authState);
+                  setUserName(userName);
+                }}
+              />} exact />
   <Route path='/today' element={<Today />} />
   <Route path='/history' element={<History />} />
   <Route path='/popular' element={<Popular />} />
@@ -37,7 +73,8 @@ export default function App() {
 
       <footer>
       <NavLink to="https://github.com/clarebwood/startup.git">Clare Wood (Source)</NavLink>
-      <div class="username">Username</div>
+      <div className="username">{userName}</div>
+      {authState === AuthState.Unauthenticated && <div className="username"></div>}
     </footer>
     </div>
     </BrowserRouter>
