@@ -12,7 +12,7 @@ export function History() {
   }
 
   const emotionIcons = {
-    Happy: "placeholder.png",
+    Happy: "circle_placeholder.svg",
     Sad: "placeholder.png",
     Angry: "placeholder.png",
     Excited: "placeholder.png",
