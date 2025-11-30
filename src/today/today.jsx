@@ -21,6 +21,19 @@ export function Today() {
     "Bored",
   ];
 
+    const emotionIcons = {
+    Happy: "circle_placeholder.svg",
+    Sad: "placeholder.png",
+    Angry: "placeholder.png",
+    Excited: "placeholder.png",
+    Tired: "placeholder.png",
+    Stressed: "placeholder.png",
+    Calm: "placeholder.png",
+    Anxious: "placeholder.png",
+    Content: "placeholder.png",
+    Bored: "placeholder.png",
+  };
+
     async function handleEmotionClick(emotion) {
     setSelectedEmotion(emotion);
 
@@ -50,7 +63,7 @@ export function Today() {
             key={emotion}
             onClick={() => handleEmotionClick(emotion)}
           >
-            <img src="placeholder.png"/>
+             <img src={emotionIcons[emotion]} />
             <div className="emotion-label">{emotion}</div>
           </button>
         ))}
