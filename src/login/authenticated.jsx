@@ -12,10 +12,14 @@ export function Authenticated(props) {
   const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
 
   React.useEffect(() => {
-    setQuote('Whoever is happy will make others happy too.');
-    setQuoteAuthor('Anne Frank');
-  }, []);
-
+    fetch('https://quote.cs260.click')
+    .then((response) => response.json())
+    .then((data) => {
+      setQuote(data.quote);
+      setQuoteAuthor(data.author);
+    })
+    .catch();
+}, []);
   function logout() {
     localStorage.removeItem('userName');
     props.onLogout();
