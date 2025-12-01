@@ -66,7 +66,7 @@ main h1 {
 }
 
 
-form {
+.auth-container {
   background: #fde2e4;
   padding: 2rem;
   border-radius: 1.5rem;
@@ -77,14 +77,14 @@ form {
 }
 
 
-form input {
+.auth-container input {
   padding: 1rem;
   border: #fff;
   border-radius: 1rem;
 }
 
 
-form button {
+.auth-container button {
   padding: 1rem;
   background: #ffafcc;
   border: #fff;
@@ -93,7 +93,7 @@ form button {
   color: #fff;
 }
 
-form button:hover {
+.auth-container button:hover {
   background: #fff;
   color: #ffafcc;
 }
