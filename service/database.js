@@ -38,6 +38,14 @@ async function addEmotion(entry) {
   return emotionCollection.insertOne(entry);
 }
 
+function getEmotions() {
+  return emotionCollection.find({}).toArray();
+}
+
+function getTodayEmotions() {
+  const today = new Date().toISOString().split('T')[0];
+  return emotionCollection.find({ date: today }).toArray();
+}
 
 
 module.exports = {
@@ -46,4 +54,6 @@ module.exports = {
   addUser,
   updateUser,
   addEmotion,
+  getEmotions,
+  getTodayEmotions,
 };
