@@ -77,12 +77,6 @@ apiRouter.get('/emotions/today', verifyAuth, async (_req, res) => {
 });
 
 
-apiRouter.get('/user', verifyAuth, (_req, res) => {
-  res.send({ username: _req.user.username });
-});
-
-
-
 
 
 // SubmitEmotion

@@ -6,7 +6,8 @@ import './today.css';
 
 export function Today() {
   const [selectedEmotion, setSelectedEmotion] = React.useState('');
-  const [userName, setUserName] = React.useState('');
+  const userName = localStorage.getItem("username");
+
 
 
   const emotions = [
@@ -39,16 +40,9 @@ export function Today() {
     setSelectedEmotion(emotion);
 
 
-    const userName = localStorage.getItem("username");
+
     const date = new Date().toISOString().split('T')[0];
     const newEntry = { user: userName, emotion, date };
-
-    React.useEffect(() => {
-      fetch("/api/user")
-        .then((res) => res.json())
-        .then((data) => setUserName(data.username))
-    
-    }, []);
 
     await fetch('/api/emotion', {
       method: 'POST',
