@@ -4,14 +4,17 @@ import './popular.css';
 export function Popular() {
   const [mostCommonEmotion, setMostCommonEmotion] = React.useState(null);
 
-  React.useEffect(() => {
-    const entries = JSON.parse(localStorage.getItem('emotionLog') || '[]');
-    const today = new Date().toISOString().split('T')[0];
+React.useEffect(() => {
+  fetch('/api/emotions/today')
+    .then(res => res.json())
+    .then(entries => {
+      if (!entries || entries.length === 0) {
+        setMostCommonEmotion(null);
+        return;
+      }
 
-    const todaysEntries = entries.filter(entry => entry.date === today);
-
-    const counts = {};
-    for (const entry of todaysEntries) {
+      const counts = {};
+      for (const entry of entries) {
       counts[entry.emotion] = (counts[entry.emotion] || 0) + 1;
     }
     
@@ -25,10 +28,11 @@ export function Popular() {
     }
 
     setMostCommonEmotion(popularEmotion);
-  }, []);
+    }) 
+}, []); 
 
   const emotionIcons = {
-    Happy: 'placeholder.png',
+    Happy: 'circle_placeholder.svg',
     Sad: 'placeholder.png',
     Angry: 'placeholder.png',
     Excited: 'placeholder.png',
