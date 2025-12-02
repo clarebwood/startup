@@ -1,7 +1,7 @@
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
-const uuid = require('uuid');
 const express = require('express');
+const uuid = require('uuid');
 const app = express();
 const DB = require('./database.js');
 
@@ -77,6 +77,12 @@ apiRouter.get('/emotions/today', verifyAuth, async (_req, res) => {
 });
 
 
+apiRouter.get('/user', verifyAuth, (_req, res) => {
+  res.send({ username: _req.user.username });
+});
+
+
+
 
 
 // SubmitEmotion
@@ -102,9 +108,7 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
+
 
 async function createUser(username, password) {
   const passwordHash = await bcrypt.hash(password, 10);
@@ -136,3 +140,6 @@ function setAuthCookie(res, authToken) {
     sameSite: 'strict',
   });
 }
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});

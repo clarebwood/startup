@@ -2,9 +2,15 @@ import React from "react";
 import "./history.css";
 
 export function History() {
+  const [entries, setEntries] = React.useState([]);
   const year = new Date().getFullYear();
 
-  const entries = JSON.parse(localStorage.getItem("emotionLog") || "[]");
+React.useEffect(() => {
+  fetch("/api/emotions")
+    .then((res) => res.json())
+    .then((data) => setEntries(data))
+
+}, []);
 
   const entryMap = {};
   for (const e of entries) {
