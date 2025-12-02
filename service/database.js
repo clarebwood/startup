@@ -38,8 +38,8 @@ async function addEmotion(entry) {
   return emotionCollection.insertOne(entry);
 }
 
-function getEmotions() {
-  return emotionCollection.find({}).toArray();
+function getEmotions(username) {
+  return emotionCollection.find({user: username}).toArray();
 }
 
 function getTodayEmotions() {

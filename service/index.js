@@ -66,9 +66,9 @@ const verifyAuth = async (req, res, next) => {
 };
 
 // GetEmotions
-apiRouter.get('/emotions', verifyAuth, async (_req, res) => {
-    const emotions = await DB.getEmotions();
-    res.send(emotions);
+apiRouter.get('/emotions', verifyAuth, async (req, res) => {
+  const emotions = await DB.getEmotions(req.user.username);
+  res.send(emotions);
 });
 
 apiRouter.get('/emotions/today', verifyAuth, async (_req, res) => {
@@ -76,8 +76,11 @@ apiRouter.get('/emotions/today', verifyAuth, async (_req, res) => {
   res.send(today);
 });
 
-
-
+apiRouter.get('/emotions', verifyAuth, async (req, res) => {
+  console.log("Authed user:", req.user);
+  const emotions = await DB.getEmotions(req.user.username);
+  res.send(emotions);
+});
 
 // SubmitEmotion
 apiRouter.post('/emotion', verifyAuth, async (req, res) => {
@@ -101,8 +104,6 @@ app.use(function (err, req, res, next) {
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
-
-
 
 async function createUser(username, password) {
   const passwordHash = await bcrypt.hash(password, 10);
@@ -134,6 +135,7 @@ function setAuthCookie(res, authToken) {
     sameSite: 'strict',
   });
 }
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
