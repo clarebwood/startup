@@ -1,6 +1,6 @@
 import React from 'react';
 import './today.css';
-
+import { Notifier } from '../../service/Notifier';
 
 
 
@@ -49,6 +49,8 @@ export function Today() {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(newEntry),
     })
+
+    Notifier.broadcastEvent(date, emotion);
 
     }
   
