@@ -31,10 +31,9 @@ class EventNotifier {
     this.handlers.push(handler);
   }
 
-removeHandler(handler) {
-  this.handlers.filter((h) => h !== handler);
-}
-
+  removeHandler(handler) {
+    this.handlers = this.handlers.filter((h) => h !== handler);
+  }
 
   receiveEvent(event) {
     this.events.push(event);
