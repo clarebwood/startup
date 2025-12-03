@@ -4,6 +4,7 @@ const express = require('express');
 const uuid = require('uuid');
 const app = express();
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -76,12 +77,6 @@ apiRouter.get('/emotions/today', verifyAuth, async (_req, res) => {
   res.send(today);
 });
 
-apiRouter.get('/emotions', verifyAuth, async (req, res) => {
-  console.log("Authed user:", req.user);
-  const emotions = await DB.getEmotions(req.user.username);
-  res.send(emotions);
-});
-
 // SubmitEmotion
 apiRouter.post('/emotion', verifyAuth, async (req, res) => {
  const entry = {
@@ -136,6 +131,8 @@ function setAuthCookie(res, authToken) {
   });
 }
 
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
