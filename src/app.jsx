@@ -33,7 +33,7 @@ export default function App() {
               {authState === AuthState.Authenticated && (
                 <li>
                   <NavLink to='today'>
-                    Today
+                    Choose
                   </NavLink>
                 </li>
               )}
@@ -47,7 +47,7 @@ export default function App() {
               {authState === AuthState.Authenticated && (
                 <li >
                   <NavLink to='popular'>
-                    Popular
+                    People
                   </NavLink>
                 </li>
               )}

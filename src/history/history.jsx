@@ -18,16 +18,26 @@ React.useEffect(() => {
   }
 
   const emotionIcons = {
-    Happy: "circle_placeholder.svg",
-    Sad: "placeholder.png",
-    Angry: "placeholder.png",
-    Excited: "placeholder.png",
-    Tired: "placeholder.png",
-    Stressed: "placeholder.png",
-    Calm: "placeholder.png",
-    Anxious: "placeholder.png",
-    Content: "placeholder.png",
-    Bored: "placeholder.png",
+    Happy: 'happy.svg',
+    Sad: 'sad.svg',
+    Angry: 'angry.svg',
+    Excited: 'excited.svg',
+    Tired: 'tired.svg',
+    Stressed: 'stressed.svg',
+    Calm: 'calm.svg',
+    Anxious: 'anxious.svg',
+    Content: 'content.png',
+    Bored: 'bored.png',
+    Dead: 'dead.svg',
+    Confused: 'confused.svg',
+    Uncomfortable: 'uncomfortable.svg',
+    Cheerful: 'cheerful.svg',
+    Wonder: 'wonder.svg',
+    Suprised: 'suprised.svg',
+    Bashful: 'bashful.svg',
+    Sorrowful: 'sorrowful.svg',
+    Silly: 'silly.svg',
+    Disapointed: 'disapointed.svg',
   };
 
   function buildMonth(monthIndex) {

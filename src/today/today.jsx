@@ -21,19 +21,39 @@ export function Today() {
     "Anxious",
     "Content",
     "Bored",
+    "Dead",
+    "Confused",
+    "Uncomfortable",
+    "Cheerful",
+    "Wonder",
+    "Suprised",
+    "Bashful",
+    "Sorrowful",
+    "Silly",
+    "Dissapointed",
   ];
 
-    const emotionIcons = {
-    Happy: "circle_placeholder.svg",
-    Sad: "placeholder.png",
-    Angry: "placeholder.png",
-    Excited: "placeholder.png",
-    Tired: "placeholder.png",
-    Stressed: "placeholder.png",
-    Calm: "placeholder.png",
-    Anxious: "placeholder.png",
-    Content: "placeholder.png",
-    Bored: "placeholder.png",
+  const emotionIcons = {
+    Happy: 'happy.svg',
+    Sad: 'sad.svg',
+    Angry: 'angry.svg',
+    Excited: 'excited.svg',
+    Tired: 'tired.svg',
+    Stressed: 'stressed.svg',
+    Calm: 'calm.svg',
+    Anxious: 'anxious.svg',
+    Content: 'content.svg',
+    Bored: 'bored.svg',
+    Dead: 'dead.svg',
+    Confused: 'confused.svg',
+    Uncomfortable: 'uncomfortable.svg',
+    Cheerful: 'cheerful.svg',
+    Wonder: 'wonder.svg',
+    Suprised: 'suprised.svg',
+    Bashful: 'bashful.svg',
+    Sorrowful: 'sorrowful.svg',
+    Silly: 'silly.svg',
+    Dissapointed: 'dissapointed.svg',
   };
 
     async function handleEmotionClick(emotion) {
@@ -73,7 +93,7 @@ export function Today() {
 
       {selectedEmotion && (
         <div>
-          <h2>Emotion Selcted: {selectedEmotion}</h2>
+          <h2>You're feeling {selectedEmotion.toLowerCase()}. </h2>
         </div>
       )}
     </main>
