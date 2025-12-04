@@ -119,7 +119,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 - [x] **Node.js/Express HTTP service** - I  completed this part of the deliverable.
 - [x] **Static middleware for frontend** - I completed this part of the deliverable.
-- [x] **Calls to third party endpoints** - I not completed this part of the deliverable.
+- [x] **Calls to third party endpoints** - I completed this part of the deliverable. (Quote found in the home page after login)
 - [x] **Backend service endpoints** - I completed this part of the deliverable.
 - [x] **Frontend calls service endpoints** - I completed this part of the deliverable.
 - [x] **Supports registration, login, logout, and restricted endpoint** - I completed this part of the deliverable.
@@ -136,8 +136,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [x] **Backend listens for WebSocket connection** - I did completed this part of the deliverable.
+- [x] **Frontend makes WebSocket connection** - I did completed this part of the deliverable.
+- [x] **Data sent over WebSocket connection** - I did completed this part of the deliverable.
+- [x] **WebSocket data displayed** - I completed this part of the deliverable. (notification on the people page when an emotion is picked)
+- [x] **Application is fully functional** - It completed this part of the deliverable.
