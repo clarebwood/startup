@@ -26,8 +26,8 @@ React.useEffect(() => {
     Stressed: 'stressed.svg',
     Calm: 'calm.svg',
     Anxious: 'anxious.svg',
-    Content: 'content.png',
-    Bored: 'bored.png',
+    Content: 'content.svg',
+    Bored: 'bored.svg',
     Dead: 'dead.svg',
     Confused: 'confused.svg',
     Uncomfortable: 'uncomfortable.svg',
@@ -37,7 +37,7 @@ React.useEffect(() => {
     Bashful: 'bashful.svg',
     Sorrowful: 'sorrowful.svg',
     Silly: 'silly.svg',
-    Disapointed: 'disapointed.svg',
+    Dissapointed: 'dissapointed.svg',
   };
 
   function buildMonth(monthIndex) {
